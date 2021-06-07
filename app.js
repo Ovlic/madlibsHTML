@@ -3,6 +3,7 @@ function makemadlib (j, mlform){
         mlform.removeChild(mlform.lastChild);
     }
     var storydiv = document.getElementById("story")
+    storydiv.innerHTML = "Fill out all the boxes and click \"Submit\" to see the story!"
     //split text for each part of madlib
     var ps = {
         n:0,
