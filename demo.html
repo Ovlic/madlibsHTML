@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <div class="flex-container">
+            <div class="flex-child-form">
+            <form class="form" id="mlform">
+                <label for="adj1">Adjective</label>
+                <input type="text" id="adj1"><br><br>
+                <label for="n1">Noun</label>
+                <input type="text" id="n1"><br><br>
+                <label for="n2">Noun</label>
+                <input type="text" id="n2"><br><br>
+                <label for="pn1">Plural Noun</label>
+                <input type="text" id="pn1"><br><br>
+                <label for="adv1">Adverb</label>
+                <input type="text" id="adv1"><br><br>
+                <label for="adv2">Adverb</label>
+                <input type="text" id="adv2"><br><br>
+                <label for="n3">Noun</label>
+                <input type="text" id="n3"><br><br>
+                <label for="n4">Noun</label>
+                <input type="text" id="n4"><br><br>
+                <label for="n5">Noun</label>
+                <input type="text" id="n5"><br><br>
+                <label for="n6">Noun</label>
+                <input type="text" id="n6"><br><br>
+                <label for="pn2">Plural Noun</label>
+                <input type="text" id="pn2"><br><br>
+                <label for="pn3">Plural Noun</label>
+                <input type="text" id="pn3"><br><br>
+                <label for="adv3">Adverb</label>
+                <input type="text" id="adv3"><br><br>
+                <label for="n7">Noun</label>
+                <input type="text" id="n7"><br><br>
+                <label for="n8">Noun</label>
+                <input type="text" id="n8"><br><br>
+                <label for="n9">Noun</label>
+                <input type="text" id="n9"><br><br>
+                <label for="n10">Noun</label>
+                <input type="text" id="n10"><br><br>
+                <label for="n11">Noun</label>
+                <input type="text" id="n11"><br><br>
+                <label for="n12">Noun</label>
+                <input type="text" id="n12"><br><br>
+                <input type="submit" class="btn">
+            </form>
+        </div>
+        <div class="flex-child-story" id="story">
+            <p>Fill out all the boxes and click "Submit" to see the story!</p>
+        </div>
+    </div>
+        <script>
+        const mlform = document.getElementById("mlform")
+            mlform.onsubmit = function(e){
+                const storydiv = document.getElementById("story")
+                const mlform = document.getElementById("mlform")
+                const adj1 = document.getElementById("adj1").value
+                const pn1 = document.getElementById("pn1").value
+                const pn2 = document.getElementById("pn2").value
+                const pn3 = document.getElementById("pn3").value
+                const adv1 = document.getElementById("adv1").value
+                const adv2 = document.getElementById("adv2").value
+                const adv3 = document.getElementById("adv3").value
+                const n1 = document.getElementById("n1").value
+                const n2 = document.getElementById("n2").value
+                const n3 = document.getElementById("n3").value
+                const n4 = document.getElementById("n4").value
+                const n5 = document.getElementById("n5").value
+                const n6 = document.getElementById("n6").value
+                const n7 = document.getElementById("n7").value
+                const n8 = document.getElementById("n8").value
+                const n9 = document.getElementById("n9").value
+                const n10 = document.getElementById("n10").value
+                const n11 = document.getElementById("n11").value
+                const n12 = document.getElementById("n12").value
+                
+                e.preventDefault()
+                var story = aa(adj1)+" dictionary is the essential reference "+n1+" for home, school, or "+n2+". A dictionary not only defines "+pn1+", but tells you how to spell words "+adv1+" and how to pronounce them "+adv2+". Dictionaries are available in local "+n3+" stores or, if necessary, you can order one with "+aa(n4)+" card over the Internet. For the average "+n5+", a medium-sized dictionary is best. For researchers, an unabridged "+n6+", which has more than 200,000 "+pn2+" will be needed. For those who can't remember the meaning of any "+pn3+", a pocket-sized dictionary works "+adv3+". These dictionaries are small enough to fit in a woman's "+n7+", the pocket of a man's "+n8+", or a kid's back "+n9+". As Henry Wadsworth LongeFellow, the famous "+n10+" wrote, \"I'd rather go without food in my "+n11+" than go without a dictionary on my "+n12+" shelf.\""
+                story = story.split("")
+                story[0] = story[0].toUpperCase()
+                for(i = 0; i < story.length; i++){
+                    var cc = i + 2
+                    if(story[i] === "."){
+                        console.log(cc)
+                        if(cc > story.length){
+                            continue;
+                        } else if(story.length > cc){
+                            story[cc] = story[cc].toUpperCase()
+                        }
+                    }
+                }
+                story = story.join("")
+                storydiv.innerHTML = story
+                window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#story"
+
+            }
+            function aa (input){
+                var i = input.split("")
+                if(i[0] === "a"||i[0] === "e"||i[0] === "i"||i[0] === "o"||i[0] === "u"){
+                    return "an "+input
+                } else{
+                    return "a "+input
+                }
+            }
+        </script>
+    </body>
+</html>

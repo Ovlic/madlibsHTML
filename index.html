@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <form id="textform">
+            <label for="storyform">Story:</label>
+            <input type="text" id="storyform"><br>
+            <input type="submit" value="Submit" class="btn">
+        </form><br>
+        <div class="flex-container">
+            <div class="flex-child-form">
+                <form class="form" id="mlform">
+
+                </form>
+            </div>
+            <div class="flex-child-story" id="story">
+                <p>Fill out all the boxes and click "Submit" to see the story!</p>
+            </div>
+        </div>
+        <script>
+            const textinput = document.getElementById("textform")
+            const storyform = document.getElementById("storyform")//.value;
+            const mlform = document.getElementById("mlform")
+            textinput.onsubmit = function(e){
+                e.preventDefault()
+                console.log(storyform.value)
+                makemadlib(storyform.value, mlform)
+            }
+            //makemadlib("A/An /adjective dictionary is the essential reference /noun for home, school, or /noun. A dictionary not only defines /plural-noun, but tells you how to spell words /adverb and how to pronounce them /adverb. Dictionaries are available in local /noun stores or, if necessary, you can order one with a/an /noun card over the Internet. For the average /noun, a medium-sized dictionary is best. For researchers, an unabridged /noun, which has more than 200,000 /plural-noun will be needed. For those who can't remember the meaning of any /plural-noun, a pocket-sized dictionary works /adverb. These dictionaries are small enough to fit in a woman's /noun, the pocket of a man's /noun, or a kid's back /noun. As Henry Wadsworth LongeFellow, the famous /noun wrote, \"I'd rather go without food in my /noun than go without a dictionary on my /noun shelf.\"", mlform)
+            //The /adjective /noun /verb over the /noun. Testing.
+            //A/An /noun will /verb over the /noun.
+        </script>
+    </body>
+</html>
