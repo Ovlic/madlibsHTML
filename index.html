@@ -5,7 +5,7 @@
     <body>
         <form id="textform">
             <label for="storyform">Story:</label>
-            <input type="text" id="storyform"><br>
+            <input type="text" id="storyform" value="the /adjective /noun /verb over the /noun"><br>
             <input type="submit" value="Submit" class="btn">
         </form><br>
         <div class="flex-container">
@@ -32,6 +32,9 @@
             </div>
         </div>
         <script>
+            makemadlib(storyform.value, mlform)
+        </script>
+        <script>
             const textinput = document.getElementById("textform")
             const storyform = document.getElementById("storyform")//.value;
             const mlform = document.getElementById("mlform")
@@ -44,5 +47,6 @@
             //The /adjective /noun /verb over the /noun. Testing.
             //A/An /noun will /verb over the /noun.
         </script>
+    <p style="position: absolute; top: 90%; font-size: 18px;">View an example <a href="https://ovlic.com/madlibsHTML/demo">here</a></p>
     </body>
 </html>
